@@ -70,7 +70,7 @@ const Post = ({ post }) => {
         />
       </Flex>
       <Flex flexDir="column">
-        <Flex flexDir="column" p={4}>
+        <Flex flexDir="column" py={4}>
           <Flex gap={2}>
             <Avatar size="sm" src={post?.picUrl} />
             <Flex flexGrow={1} justifyContent="space-between">
@@ -94,8 +94,8 @@ const Post = ({ post }) => {
           <Flex flexDir="column" gap={4} mt={4}>
             <Heading size="md">{post?.post}</Heading>
             <Flex gap={1}>
-              {post?.tags.map((tag) => (
-                <Tag size="sm" color="#5249C7">
+              {post?.tags.map((tag, i) => (
+                <Tag size="sm" color="#5249C7" key={i}>
                   {tag.toUpperCase()}
                 </Tag>
               ))}

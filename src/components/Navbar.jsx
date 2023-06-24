@@ -30,6 +30,7 @@ const Navbar = () => {
       borderColor="gray.300"
       justifyContent="space-between"
       position="relative"
+      alignItems="center"
     >
       <Flex flexDir="column" gap={4} fontSize="1.2rem" flexGrow={1}>
         <Box

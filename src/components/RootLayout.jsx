@@ -2,10 +2,12 @@ import React from "react";
 import Header from "./Header";
 import Navbar from "./Navbar";
 import SideBarRight from "./SideBarRight";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { Grid, GridItem } from "@chakra-ui/react";
 
 const RootLayout = () => {
+  const location = useLocation();
+
   return (
     <Grid
       minH="100vh"
@@ -30,7 +32,7 @@ const RootLayout = () => {
         <Outlet />
       </GridItem>
       <GridItem as={"aside"} area={"aside"} bg="#F7F7F7">
-        <SideBarRight />
+        {location?.pathname === "/" && <SideBarRight />}
       </GridItem>
     </Grid>
   );
