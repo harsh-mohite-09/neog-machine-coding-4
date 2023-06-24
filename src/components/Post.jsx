@@ -22,6 +22,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link } from "react-router-dom";
 import { useAppContext } from "../context/AppContextProvider";
+import { getHumanizeTimeForOlderPost } from "../helper";
 
 const Post = ({ post }) => {
   const { dispatch } = useAppContext();
@@ -39,6 +40,8 @@ const Post = ({ post }) => {
   const downvoteHandler = () => {
     dispatch({ type: "DOWNVOTE", payload: post.postId });
   };
+
+  const displayTime = getHumanizeTimeForOlderPost(new Date(), post?.createdAt);
 
   return (
     <Flex w="full" maxW="600px" bg="white">
@@ -80,13 +83,7 @@ const Post = ({ post }) => {
                     <Text fontSize="0.8rem">Posted by</Text>
                     <Text color="#5249C7">@{post?.username}</Text>
                   </Flex>
-                  <Text fontSize="0.7rem">
-                    {new Date(post?.createdAt).toLocaleDateString("en-US", {
-                      day: "numeric",
-                      month: "short",
-                      year: "numeric",
-                    })}
-                  </Text>
+                  <Text fontSize="0.7rem"> {displayTime}</Text>
                 </Flex>
               </Flex>
             </Flex>
