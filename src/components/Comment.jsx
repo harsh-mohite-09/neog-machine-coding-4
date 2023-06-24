@@ -3,7 +3,6 @@ import {
   Box,
   Divider,
   Flex,
-  Heading,
   IconButton,
   Text,
   Tooltip,
@@ -30,7 +29,7 @@ const Comment = ({ comment, replyingTo }) => {
                 <Flex gap={2} alignItems="center">
                   <Text fontWeight="bold" size="md">{`${comment?.name}`}</Text>
                   <Text>@{comment?.username}</Text>
-                  <Text fontSize="sm">
+                  <Text fontSize="0.7rem">
                     {new Date(comment?.createdAt).toLocaleDateString("en-US", {
                       day: "numeric",
                       month: "short",

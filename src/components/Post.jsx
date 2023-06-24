@@ -80,7 +80,7 @@ const Post = ({ post }) => {
                     <Text fontSize="0.8rem">Posted by</Text>
                     <Text color="#5249C7">@{post?.username}</Text>
                   </Flex>
-                  <Text fontSize="0.8rem">
+                  <Text fontSize="0.7rem">
                     {new Date(post?.createdAt).toLocaleDateString("en-US", {
                       day: "numeric",
                       month: "short",

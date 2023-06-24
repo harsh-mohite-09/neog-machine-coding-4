@@ -10,7 +10,7 @@ const RootLayout = () => {
     <Grid
       minH="100vh"
       templateColumns="1fr 3fr 1fr"
-      templateRows="56px 1fr"
+      templateRows="56px calc(100vh - 56px)"
       templateAreas={`"header header header"
               "nav main aside"`}
     >
